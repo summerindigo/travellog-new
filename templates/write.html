@@ -45,8 +45,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 
     <title>우리의 여행</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+          rel="stylesheet">
 
     <style>
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
         .sitetop {
             height: 300px;
             width: 900px;
@@ -62,10 +70,8 @@
             margin: 10px;
             padding: 120px 0px;
             text-align: center;
-            font-family: "Arial Black", sans-serif;
             font-size: 50px;
             font-weight: bold;
-
             color: #ffffff;
             text-shadow: 2px 2px 0px #333333;
         }
@@ -242,16 +248,24 @@
     <!--본문 부분: 기록 작성-->
     <div class="form-post" id="post-box">
         <div>
-            <div class="form-group">
-                <input class="form-control" id="post-writer" placeholder="작성자">
-            </div>
-            <div class="form-group">
-                <input class="form-control" id="post-place" placeholder="장소">
-            </div>
-            <div class="form-group">
-                <input class="form-control" id="post-title" placeholder="제목">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input class="form-control" id="post-writer" placeholder="작성자">
+                </div>
+                <div class="form-group col-md-6">
+                    <input class="form-control" id="post-writer" placeholder="숫자">
+                </div>
+
             </div>
 
+            <div class="form-group">
+                <input class="form-control" id="post-place" placeholder="여행지">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="post-title" placeholder="일기 제목">
+            </div>
+
+<<<<<<< HEAD
                 <!--날짜-->
                 <div class="form-group">
                     <input type="date" class="form-control" id="post-date" name="trip-start"
@@ -272,6 +286,28 @@
                         <option value="8">❄️</option>
                     </select>
                 </div>
+=======
+            <!--날짜-->
+            <div class="form-group">
+                <input type="date" class="form-control" id="post-date" name="trip-start"
+                       placeholder="날짜 선택">
+            </div>
+
+<!--            날씨 중에 쓸 이모티콘을 선택해야 함-->
+<!--            <form action='a.jsp'>-->
+<!--                날씨<br>-->
+<!--                <input type='radio' name='weather' value='sunny'/>️☀️-->
+
+            <div class="form-group" id="post-weather">
+                <button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">☀️</button>
+                <button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">☁️</button>
+                <button type="button" class="btn">☔</button>
+                <button type="button" class="btn">💨</button>
+                <button type="button" class="btn">⚡</button>
+                <button type="button" class="btn">☃️️</button>
+            </div>
+>>>>>>> 207e6a5501fbe0d0d2d1b28fff7f8783a8bd0466
+
 
             <!--사진첨부-->
             <div class="custom-file">
@@ -279,6 +315,7 @@
                 <label class="custom-file-label" for="file">사진 선택</label>
             </div>
 
+<<<<<<< HEAD
                 <!--내용작성-->
                 <div class="form-group-comment">
                     <label for="post-comment">간단 코멘트</label>
@@ -287,6 +324,15 @@
 
                 <button class="btn btn-primary" onclick="postArticle()" type="button">기록 저장</button>
             </div>
+=======
+            <!--내용작성-->
+            <div class="form-group-comment">
+                <label for="post-comment">일기 내용</label>
+                <textarea class="form-control" id="post-comment" rows="2"></textarea>
+            </div>
+
+            <button class="btn btn-primary" onclick="postArticle()" type="button">일기 저장</button>
+>>>>>>> 207e6a5501fbe0d0d2d1b28fff7f8783a8bd0466
         </div>
     </div>
     <div class="card-columns" id="cards-box">
@@ -296,11 +342,11 @@
 </div>
 
 <footer class="wrap">
-  <div class="footer">
-     <p>made by 코우파<br>
-     <a href="https://www.notion.so/c4d4062b9ee64ec7b7c14f301e2f6a45">우리의 여행</a></p>
+    <div class="footer">
+        <p>made by 코우파<br>
+            <a href="https://www.notion.so/c4d4062b9ee64ec7b7c14f301e2f6a45">우리의 여행</a></p>
 
-  </div>
+    </div>
 </footer>
 </body>
 </html>
