@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
     />
 
     <!-- Bootstrap CSS -->
     <link
-      crossorigin="anonymous"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      rel="stylesheet"
+            crossorigin="anonymous"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            rel="stylesheet"
     />
 
     <!-- 구글폰트 -->
     <link
-      href="https://fonts.googleapis.com/css?family=Stylish&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Stylish&display=swap"
+            rel="stylesheet"
     />
 
     <!-- JS -->
     <script
-      crossorigin="anonymous"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     ></script>
     <script
-      crossorigin="anonymous"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     ></script>
     <script
-      crossorigin="anonymous"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     ></script>
 
     <!--파일업로드 코드-->
@@ -47,51 +47,67 @@
     <title>우리의 여행</title>
 
     <style>
-    .sitetop {
-        height: 300px;
-        width: 900px;
-        margin: auto;
-        background-color: ivory;
-    }
+        .sitetop {
+            height: 300px;
+            width: 900px;
+            margin: auto;
+            background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .sitetitle {
+
+            margin: 10px;
+            padding: 120px 0px;
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #333333;
+        }
 
 
-      /* Add a black background color to the top navigation */
-      .topnav {
-        width: 900px;
-        margin: auto;
-        background-color: #333;
-        overflow: hidden;
-      }
+        /* Add a black background color to the top navigation */
+        .topnav {
+            width: 900px;
+            margin: auto;
+            background-color: #333;
+            overflow: hidden;
+        }
 
-      /* Style the links inside the navigation bar */
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-      /* Change the color of links on hover */
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-      /* Add a color to the active/current link */
-      .topnav a.active {
-        background-color: #04aa6d;
-        color: white;
-      }
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: darkgoldenrod;
+            color: white;
+        }
 
-      .wrap {
+        .wrap {
             width: 900px;
             margin: auto;
         }
 
-        /* write.html만의 부분 s */
-     .form-post {
+        /* 포스팅 관련 css 시작 */
+        .form-post {
             width: 500px;
             margin: 20px auto;
             padding: 50px;
@@ -99,14 +115,16 @@
             border-radius: 5px;
         }
 
-            /* 간단 코멘트 위 아래 여백 */
+        /* 간단 코멘트 위 아래 여백 */
         .form-group-comment {
             margin-top: 15px;
             margin-bottom: 20px;
         }
-        /* write.html만의 부분 e */
+        /* 포스팅 관련 css 끝 */
 
-        @media screen and (max-width: 780px) {
+
+         /* write.html만의 부분 e */
+         @media screen and (max-width: 780px) {
             /* 아직 write.html에만 작성했고 전체 html에 통일할 계획 s */         
             .sitetop {
                 width: 100%;
@@ -166,6 +184,15 @@
             /* !!여기는 모바일 버전 css 끝!! */
         }
 
+
+        .footer {
+            bottom: 10px;
+            height: 3rem; /* 푸터 높이 */
+            background-color: darkgoldenrod;
+            width: 900px;
+            text-align: center;
+            color: white;
+        }
     </style>
 
     <script>
@@ -183,37 +210,35 @@
         });
     </script>
 
-  </head>
+</head>
 
-  <body>
-    <header class="wrap" id="myheader">
-        <div class="sitetop">
-            우리의 여행
-        </div>
-      <div class="topnav">
-          <!-- 아직 연결은 안됨 -->
-        <a class="active" href="index.html">홈</a>
-        <a href="write.html">기록장</a>
-        <a href="#mypost">내 글 모아보기</a>
+<body>
+<header class="wrap">
+    <div class="sitetop">
+        <h1 class="sitetitle">우리의 여행</h1>
+    </div>
+    <div class="topnav">
+        <a href="index.html">우리의 여행일기</a>
+        <a class="active" href="write.html">일기 쓰기</a>
+        <a href="#mypost">내 일기 모아보기</a>
         <a href="#about">about</a>
-      </div>
-      여기에 메뉴
-    </header>
+    </div>
+</header>
 
-    <div class="wrap">
+<div class="wrap">
 
-        <!--본문 부분: 기록 작성-->
-        <div class="form-post" id="post-box">
-            <div>
-                <div class="form-group">
-                    <input class="form-control" id="post-writer" placeholder="작성자">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" id="post-place" placeholder="장소">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" id="post-title" placeholder="제목">
-                </div>
+    <!--본문 부분: 기록 작성-->
+    <div class="form-post" id="post-box">
+        <div>
+            <div class="form-group">
+                <input class="form-control" id="post-writer" placeholder="작성자">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="post-place" placeholder="장소">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="post-title" placeholder="제목">
+            </div>
 
                 <!--날짜-->
                 <div class="form-group">
@@ -236,11 +261,11 @@
                     </select>
                 </div>
 
-                <!--사진첨부-->
-                <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="file">
-                        <label class="custom-file-label" for="file">사진 선택</label>
-                </div>
+            <!--사진첨부-->
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file">
+                <label class="custom-file-label" for="file">사진 선택</label>
+            </div>
 
                 <!--내용작성-->
                 <div class="form-group-comment">
@@ -251,11 +276,19 @@
                 <button class="btn btn-primary" onclick="postArticle()" type="button">기록 저장</button>
             </div>
         </div>
-        
     </div>
+    <div class="card-columns" id="cards-box">
+    </div>
+</div>
 
-    <footer class="wrap">
-        여기는 푸터
-    </footer>
-  </body>
+</div>
+
+<footer class="wrap">
+  <div class="footer">
+     <p>made by 코우파<br>
+     <a href="https://www.notion.so/c4d4062b9ee64ec7b7c14f301e2f6a45">우리의 여행</a></p>
+
+  </div>
+</footer>
+</body>
 </html>
