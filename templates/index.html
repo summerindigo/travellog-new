@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
     />
 
     <!-- Bootstrap CSS -->
     <link
-      crossorigin="anonymous"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      rel="stylesheet"
+            crossorigin="anonymous"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            rel="stylesheet"
     />
 
     <!-- 구글폰트 -->
     <link
-      href="https://fonts.googleapis.com/css?family=Stylish&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Stylish&display=swap"
+            rel="stylesheet"
     />
 
     <!-- JS -->
     <script
-      crossorigin="anonymous"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     ></script>
     <script
-      crossorigin="anonymous"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     ></script>
     <script
-      crossorigin="anonymous"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     ></script>
 
     <!--파일업로드 코드-->
@@ -47,47 +47,73 @@
     <title>공유 여행 기록장</title>
 
     <style>
-    .sitetop {
-        height: 300px;
-        width: 900px;
-        margin: auto;
-        background-color: ivory;
-    }
-
-
-      /* Add a black background color to the top navigation */
-      .topnav {
-        width: 900px;
-        margin: auto;
-        background-color: #333;
-        overflow: hidden;
-      }
-
-      /* Style the links inside the navigation bar */
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-
-      /* Change the color of links on hover */
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-
-      /* Add a color to the active/current link */
-      .topnav a.active {
-        background-color: #04aa6d;
-        color: white;
-      }
-
-      .wrap {
+        .sitetop {
+            height: 300px;
             width: 900px;
             margin: auto;
+            background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .sitetitle {
+
+            margin: 10px;
+            padding: 120px 0px;
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #333333;
+        }
+
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+            width: 900px;
+            margin: auto;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: darkgoldenrod;
+            color: white;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            height: 3rem; /* 푸터 높이 */
+            background-color: darkgoldenrod;
+            width: 900px;
+            text-align: center;
+            color: white;
         }
 
       .card-deck {
@@ -98,17 +124,18 @@
       }
 
     </style>
-  </head>
-  <body>
-    <header class="wrap">
-        <div class="sitetop">
-            우리의 여행
-        </div>
-      <div class="topnav">
-        <a class="active" href="index.html">홈</a>
-        <a href="write.html">기록장</a>
-        <a href="#mypost">내 글 모아보기</a>
+</head>
+<body>
+<header class="wrap">
+    <div class="sitetop">
+        <h1 class="sitetitle">우리의 여행</h1>
+    </div>
+    <div class="topnav">
+        <a class="active" href="index.html">우리의 여행일기</a>
+        <a href="write.html">일기 쓰기</a>
+        <a href="#mypost">내 일기 모아보기</a>
         <a href="#about">about</a>
+<<<<<<< HEAD
       </div>
       여기에 메뉴
     </header>
@@ -178,10 +205,22 @@
             </div>
           </div>
         </div>
+=======
+>>>>>>> 7130704ce989b2a4e9a1b049731219bd6b151431
     </div>
+</header>
 
-    <footer class="wrap">
-        여기는 푸터
-    </footer>
-  </body>
+<div class="wrap">
+    여기는 몸뚱아리
+</div>
+
+<footer class="wrap">
+  <div class="footer">
+     <p>made by 코우파<br>
+     <a href="https://www.notion.so/c4d4062b9ee64ec7b7c14f301e2f6a45">우리의 여행</a></p>
+
+  </div>
+
+</footer>
+</body>
 </html>
