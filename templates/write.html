@@ -137,6 +137,85 @@
             text-align: center;
             color: white;
         }
+
+        /* !!여기는 모바일 버전 css !! */
+        @media screen and (max-width: 900px) {   
+            .sitetop {
+                width: 100%;
+                height: 160px;
+                background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+                background-size: cover;
+                background-position: center;
+                margin-top: 0;
+            }
+            
+            .sitetitle {
+                margin: 0px;
+                padding: 50px 0px;
+                text-align: center;
+                font-family: "Arial Black", sans-serif;
+                font-size: 40px;
+                font-weight: bold;
+                color: #ffffff;
+                text-shadow: 2px 2px 0px #333333;
+            }
+
+            /* Add a black background color to the top navigation */
+            .topnav {
+                width: 100%;
+                margin: auto;
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px 16px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: darkgoldenrod;
+                color: white;
+            }
+
+            .wrap {
+                width: 100%;
+            }
+
+            /* write.html만의 부분 s */
+            .form-post {
+                width: 80%;
+                padding: 30px 25px 25px 20px;
+                margin: auto;
+                margin-top: 25px;
+                margin-bottom: 40px;
+                
+            }
+            /* write.html만의 부분 e */
+            
+
+            .footer {
+                width: 100%;
+                bottom: 10px;
+                height: 3rem; /* 푸터 높이 */
+                background-color: darkgoldenrod;
+                text-align: center;
+                color: white;
+            }
+        }
+        /* !!여기는 모바일 버전 css 끝!! */
     </style>
 
     <script>
@@ -154,8 +233,8 @@
         <h1 class="sitetitle">우리의 여행</h1>
     </div>
     <div class="topnav">
-        <a href="index.html">우리의 여행일기</a>
-        <a class="active" href="write.html">일기 쓰기</a>
+        <a href="/">우리의 여행일기</a>
+        <a class="active" href="/menu1">일기 쓰기</a>
         <a href="#mypost">내 일기 모아보기</a>
         <a href="#about">about</a>
     </div>
