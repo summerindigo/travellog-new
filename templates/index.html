@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
 
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
@@ -122,13 +121,17 @@
             color: white;
         }
 
-      .card-deck {
-        width: 900px;
-        margin: auto;
-        padding-top: 20px;
-      }
+        .card-deck {
+            width: 900px;
+            margin: auto;
+            padding-top: 20px;
+        }
 
+<<<<<<< HEAD
       @media only screen and (max-width: 900px) {     
+=======
+        @media screen and (max-width: 900px) {
+>>>>>>> 1614205b0cd8fb2ac6d0593c700cef09a69c5651
             .sitetop {
                 width: 100%;
                 height: 160px;
@@ -136,7 +139,7 @@
                 background-size: cover;
                 background-position: center;
             }
-            
+
             .sitetitle {
                 margin: 0px;
                 padding: 50px 0px;
@@ -181,7 +184,7 @@
             .wrap {
                 width: 100%;
             }
-           
+
             /* index.html만의 부분 s */
             .card-deck {
                 width: 100%;
@@ -192,9 +195,8 @@
             .card {
                 min-width: 250px;
             }
-            /* index.html만의 부분 e */
-            
 
+            /* index.html만의 부분 e */
             .footer {
                 width: 100%;
                 bottom: 10px;
@@ -204,89 +206,135 @@
                 color: white;
             }
         }
+
         /* !!여기는 모바일 버전 css 끝!! */
 
     </style>
 </head>
 <body>
-    <header class="wrap">
-        <div class="sitetop">
-            <h1 class="sitetitle">우리의 여행</h1>
-        </div>
-        <div class="topnav">
-            <a class="active" href="/">우리의 여행일기</a>
-            <a href="/menu1">일기 쓰기</a>
-            <a href="#mypost">내 일기 모아보기</a>
-            <a href="#about">about</a>
-          </div>
-    </header>
 
-    <div class="wrap">
-        <div class="card-deck">
-          <div class="card">
-            <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+<header class="wrap">
+    <div class="sitetop">
+        <h1 class="sitetitle">우리의 여행</h1>
+    </div>
+    <div class="topnav">
+        <a class="active" href="/">우리의 여행일기</a>
+        <a href="/menu1">일기 쓰기</a>
+        <a href="#mypost">내 일기 모아보기</a>
+        <a href="#about">about</a>
+    </div>
+</header>
+
+<div class="wrap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>My Caption Title (1st Image)</h5>
+                    <p>The whole caption will only show up if the screen is at least medium size.</p>
+                </div>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/arch" alt="Second slide">
             </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/nature" alt="Third slide">
             </div>
-          </div>
         </div>
-        <div class="card-deck">
-          <div class="card">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="card-deck">
+        <div class="card">
             <img class="card-img-top"
                  src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
                  alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
             </div>
-          </div>
-          <div class="card">
+        </div>
+        <div class="card">
             <img class="card-img-top"
                  src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
                  alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
             </div>
-          </div>
-          <div class="card">
+        </div>
+        <div class="card">
             <img class="card-img-top"
                  src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
                  alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
-              <p class="card-text">간단한 일기 내용입니다.</p>
-              <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
             </div>
-          </div>
         </div>
     </div>
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="wrap">
     <div class="footer">
