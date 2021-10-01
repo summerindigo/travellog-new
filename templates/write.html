@@ -224,26 +224,33 @@
         })
 
         function postArticle() {
-                let writer = $('#post-writer').val
-                let code = $('#post-writer').val
-                let place = $('#post-place').val
-                let title = $('#post-title').val
-                let date = $('#post-date').val
-                let weather = $('#post-weather').val
-                let picture = $('#file').val
-                let comment = $('#post-comment').val
+            let writer = $('#post-writer').val()
+            let code = $('#post-code').val()
+            let place = $('#post-place').val()
+            let title = $('#post-title').val()
+            let date = $('#post-date').val()
+            let weather = $('#post-weather').val()
+            let picture = $('#file').val()
+            let comment = $('#post-comment').val()
+
+            $.ajax({
+                type: "POST",
+                url: "/log",
+                data: {
+                    writer_give: writer,
+                    code_give: code,
+                    place_give: place,
+                    title_give: title,
+                    date_gie: date,
+                    weather_give: weather,
+                    picture_give: picture,
+                    comment_give: comment
+                },
+                success: function(response) {
+                    console.log(response);
+                }
+            })
         }
-                $.ajax({
-                    type: "POST",
-                    url: "/makeLog",
-                    data: {writer_give: writer, code_give: code, place_give: place, title_give: title, date_gie: date, weather_give: weather,
-                        picture_give: picture, comment_give: comment
-                    },
-                    success: function (response) {
-                        alert(response["msg"]);
-                        window.location.reload();
-                    }
-                })
 
     </script>
 
@@ -272,7 +279,7 @@
                     <input class="form-control" id="post-writer" placeholder="작성자">
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-control" id="post-writer" placeholder="숫자">
+                    <input class="form-control" id="post-code" placeholder="숫자">
                 </div>
 
             </div>

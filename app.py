@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.dbtravelLog
 
 ## HTML 화면 보여주기
@@ -22,6 +22,8 @@ def make_Log():
     place_receive = request.form['place_give']
     title_receive = request.form['title_give']
     date_receive = request.form['date_give']
+    weather_receive = request.form['weather_give']
+    picture_receive = request.form['picture_give']
     memo_receive = request.form['memo_give']
 
     doc = {
@@ -30,6 +32,8 @@ def make_Log():
         'place': place_receive,
         'title': title_receive,
         'date': date_receive,
+        'weather': weather_receive,
+        'picture': picture_receive,
         'memo': memo_receive
            }
     db.travelLog.insert_one(doc)
