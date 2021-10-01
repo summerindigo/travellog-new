@@ -6,7 +6,7 @@ app = Flask(__name__)
 from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 # client = MongoClient('mongodb://test:test@localhost', 27017) 이건 일부러 비활성화 시킴
-# !!!!!!!!!!!!!!!!여기에 db 클라이언트 경로 추가해야 함
+db = client.travellog_project
 
 from datetime import datetime   ## file 저장 명칭을 위해 필요
 
@@ -56,7 +56,7 @@ def post():            ## 일기 저장 버튼 누르면
         'comment' : comment_receive
     }
 
-    ## insert_one(doc) 함수 넣어야
+    db.practice.insert_one(doc)
     return jsonify({'msg': '저장이 완료되었습니다'})
 
 if __name__ == '__main__':

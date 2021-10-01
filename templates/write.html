@@ -219,20 +219,27 @@
             bsCustomFileInput.init()
         })
 
+        
+
+
+        function postArticle() {
+
         // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
-        let id_writer = $('#post-writer').val()  
-        let id_numbers =  $('#post-numbers').val()
+        let writer = $('#post-writer').val()  
+        let numbers =  $('#post-numbers').val()
         let place =  $('#post-place').val()
         let title =  $('#post-title').val()
         let date =  $('#post-date').val()
         let weather =  $('#post-weather').val()
-        let file =  $('#post-file').val()
+        
         let comment =  $('#post-comment').val()
 
+        let file =  $('#file')[0].files[0]
 
         let form_data = new FormData()
-        form_data.append("id_writer_give", writer)
-        form_data.append("id_numbers_give", numbers)
+        
+        form_data.append("writer_give", writer)
+        form_data.append("numbers_give", numbers)
         form_data.append("place_give", place)
         form_data.append("title_give", title)
         form_data.append("date_give", date)
@@ -240,8 +247,6 @@
         form_data.append("file_give", file)
         form_data.append("comment_give", comment)
 
-
-        function postArticle() {
             $.ajax({
                 type: "POST",
                 url: "/menu1",
@@ -253,7 +258,7 @@
                     alert(response['msg'])
                     window.location.reload()
                 }
-            })
+            });
 
             
         }
@@ -319,7 +324,7 @@
 
             <!--사진첨부-->
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="post-file">
+                <input type="file" class="custom-file-input" id="file">
                 <label class="custom-file-label" for="file">사진 선택</label>
             </div>
 
