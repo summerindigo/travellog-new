@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            crossorigin="anonymous"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            rel="stylesheet"
+    />
+
+    <!-- 구글폰트 -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Stylish&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- JS -->
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    ></script>
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    ></script>
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+
+    <!--파일업로드 코드-->
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <title>우리의 여행</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .sitetop {
+            height: 300px;
+            width: 900px;
+            margin: auto;
+            background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .sitetitle {
+
+            margin: 10px;
+            padding: 120px 0px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #333333;
+        }
+
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+            width: 900px;
+            margin: auto;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: darkgoldenrod;
+            color: white;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .footer {
+            bottom: 10px;
+            height: 3rem; /* 푸터 높이 */
+            background-color: darkgoldenrod;
+            width: 900px;
+            text-align: center;
+            color: white;
+        }
+
+        .card-deck {
+            width: 900px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 900px) {
+            .sitetop {
+                width: 100%;
+                height: 160px;
+                background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+                background-size: cover;
+                background-position: center;
+            }
+
+            .sitetitle {
+                margin: 0px;
+                padding: 50px 0px;
+                text-align: center;
+                font-family: "Arial Black", sans-serif;
+                font-size: 40px;
+                font-weight: bold;
+                color: #ffffff;
+                text-shadow: 2px 2px 0px #333333;
+            }
+
+            /* Add a black background color to the top navigation */
+            .topnav {
+                width: 100%;
+                margin: auto;
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px 16px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: darkgoldenrod;
+                color: white;
+            }
+
+            .wrap {
+                width: 100%;
+            }
+
+            /* index.html만의 부분 s */
+            .card-deck {
+                width: 100%;
+                padding-bottom: 5px;
+
+            }
+
+            .card {
+                min-width: 250px;
+            }
+
+            /* index.html만의 부분 e */
+            .footer {
+                width: 100%;
+                bottom: 10px;
+                height: 3rem; /* 푸터 높이 */
+                background-color: darkgoldenrod;
+                text-align: center;
+                color: white;
+            }
+        }
+
+        /* !!여기는 모바일 버전 css 끝!! */
+
+    </style>
+</head>
+<body>
+
+<header class="wrap">
+    <div class="sitetop">
+        <h1 class="sitetitle">우리의 여행</h1>
+    </div>
+    <div class="topnav">
+        <a href="/">우리의 여행일기</a>
+        <a href="/write">일기 쓰기</a>
+        <a class="active" href="mylog">내 일기 모아보기</a>
+        <a href="#about">about</a>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://youmatter.world/app/uploads/sites/2/2019/11/travel-world.jpg"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="data:image/jpeg;base64,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"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://ldb-phinf.pstatic.net/20200528_186/1590621301783PJgRP_PNG/%BD%E6%B3%D7%C0%CF.png"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
+                <p class="card-text">간단한 일기 내용입니다.</p>
+                <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="wrap">
+    <div class="footer">
+        <p>made by 코우파<br>
+            <a href="https://www.notion.so/c4d4062b9ee64ec7b7c14f301e2f6a45">우리의 여행</a></p>
+
+    </div>
+
+</footer>
+</body>
+</html>
