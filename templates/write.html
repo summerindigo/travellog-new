@@ -14,12 +14,16 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    ></script>
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
 
     <!-- 구글폰트 -->
     <link
@@ -27,8 +31,9 @@
             rel="stylesheet"
     />
 
+
     <!--파일업로드 코드-->
-    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>-->
 
     <title>우리의 여행</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,21 +210,51 @@
     <script>
         $(document).ready(function () {
             // 이것은 파일업로드 할때 파일명을 보이게 해주는 코드
-            bsCustomFileInput.init()
+            // bsCustomFileInput.init()
         })
 
+
         function make_log() {
+
+        // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
+        let writer = $("#post-writer").val();
+        let numbers =  $("#post-numbers").val();
+        let place =  $("#post-place").val();
+        let title =  $("#post-title").val();
+        let date =  $("#post-date").val();
+        let weather =  $("#post-weather").val();
+
+        let comment =  $("#post-comment").val();
+
+        // let file =  $("#file")[0].files[0];
+
+        let form_data = new FormData();
+
+        form_data.append("writer_give", writer)
+        form_data.append("numbers_give", numbers)
+        form_data.append("place_give", place)
+        form_data.append("title_give", title)
+        form_data.append("date_give", date)
+        form_data.append("weather_give", weather)
+        // form_data.append("file_give", file)
+        form_data.append("comment_give", comment)
+
             $.ajax({
                 type: "POST",
-                url: "/log",
-                data: {test_give: '서버 클라이언트 연결 test'},
+                url: "/write",
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
                 success: function (response) {
                     if (response["result"] == "success") {
+
                         alert(response['msg']);
                         window.location.reload();
                     }
                 }
             })
+
         }
     </script>
 
@@ -280,11 +315,12 @@
                     <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">⛄</label>
                 </div>
 
-                <!--사진첨부-->
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="file">
-                    <label class="custom-file-label" for="file">사진 선택</label>
-                </div>
+
+            <!--사진첨부-->
+<!--            <div class="custom-file">-->
+<!--                <input type="file" class="custom-file-input" id="file">-->
+<!--                <label class="custom-file-label" for="file">사진 선택</label>-->
+<!--            </div>-->
 
                 <!--내용작성-->
                 <div class="form-group-comment">
@@ -292,11 +328,12 @@
                     <textarea class="form-control" id="post-comment" rows="2"></textarea>
                 </div>
 
+
                 <button class="btn btn-primary" onclick="make_log()" type="button">일기 저장</button>
             </div>
+
         </div>
-        <div class="card-columns" id="cards-box">
-        </div>
+        <div class="card-columns" id="cards-box"></div>
     </div>
 
     <footer class="wrap">
