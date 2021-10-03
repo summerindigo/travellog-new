@@ -10,17 +10,21 @@ db = client.travellog_project
 from datetime import datetime   ## file 저장 명칭을 위해 필요
 
 ## HTML 화면 보여주기
-@app.route('/')
-def travel():
+@app.route('/')        ## 우리의 여행일기 주소 : /
+def home():            ## 우리의 여행일기 : home
     return render_template('index.html')
 
-@app.route('/menu1')
-def record():
+@app.route('/write')   ## 일기쓰기 주소 : write
+def write():           ## 일기쓰기 : write
     return render_template('write.html')
+
+@app.route('/mylog')   ## 내일기 모아보기 주소 : mylog
+def mylog():           ## 내일기 모아보기 : mylog
+    return render_template('mylog.html')
 
 
 ## 포스트 작성 페이지 write.html
-@app.route('/log', methods=['POST'])
+@app.route('/write', methods=['POST'])
 def write_log():            ## 일기 저장 버튼 누르면
     id_writer_receive = request.form['writer_give']
     id_numbers_receive = request.form['numbers_give']
@@ -58,6 +62,6 @@ def write_log():            ## 일기 저장 버튼 누르면
     db.travelLog.insert_one(doc)
     return jsonify({'result': 'success', 'msg': '이 요청은 POST!'})
 
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
-
