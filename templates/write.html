@@ -24,12 +24,8 @@
             rel="stylesheet"
     />
 
-    <!-- JS -->
-    <script
-            crossorigin="anonymous"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    ></script>
+    <!-- JS - 맨위에 있는 jquery 다른 것으로 바꿈-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
             crossorigin="anonymous"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -139,7 +135,7 @@
         }
 
         /* !!여기는 모바일 버전 css !! */
-        @media screen and (max-width: 900px) {   
+        @media screen and (max-width: 900px) {
             .sitetop {
                 width: 100%;
                 height: 160px;
@@ -148,7 +144,7 @@
                 background-position: center;
                 margin-top: 0;
             }
-            
+
             .sitetitle {
                 padding: 50px 0px;
                 text-align: center;
@@ -200,10 +196,10 @@
                 margin: auto;
                 margin-top: 25px;
                 margin-bottom: 40px;
-                
+
             }
             /* write.html만의 부분 e */
-            
+
 
             .footer {
                 width: 100%;
@@ -223,35 +219,49 @@
             bsCustomFileInput.init()
         })
 
+
+
         function postArticle() {
-            let writer = $('#post-writer').val()
-            let code = $('#post-code').val()
-            let place = $('#post-place').val()
-            let title = $('#post-title').val()
-            let date = $('#post-date').val()
-            let weather = $('#post-weather').val()
-            let picture = $('#file').val()
-            let comment = $('#post-comment').val()
+
+        // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
+        let writer = $('#post-writer').val();
+        let numbers =  $('#post-numbers').val();
+        let place =  $('#post-place').val();
+        let title =  $('#post-title').val();
+        let date =  $('#post-date').val();
+        let weather =  $('#post-weather').val();
+
+        let comment =  $('#post-comment').val();
+
+        let file =  $('#file')[0].files[0];
+
+        let form_data = new FormData();
+
+        form_data.append("writer_give", writer)
+        form_data.append("numbers_give", numbers)
+        form_data.append("place_give", place)
+        form_data.append("title_give", title)
+        form_data.append("date_give", date)
+        form_data.append("weather_give", weather)
+        form_data.append("file_give", file)
+        form_data.append("comment_give", comment)
 
             $.ajax({
                 type: "POST",
-                url: "/log",
-                data: {
-                    writer_give: writer,
-                    code_give: code,
-                    place_give: place,
-                    title_give: title,
-                    date_gie: date,
-                    weather_give: weather,
-                    picture_give: picture,
-                    comment_give: comment
-                },
-                success: function(response) {
-                    console.log(response);
+                url: "/makelog",
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                        alert(response["msg"]);
+                        window.location.reload();
                 }
-            })
-        }
 
+            })
+
+
+        }
     </script>
 
 </head>
@@ -279,7 +289,7 @@
                     <input class="form-control" id="post-writer" placeholder="작성자">
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-control" id="post-code" placeholder="숫자">
+                    <input class="form-control" id="post-numbers" placeholder="숫자">
                 </div>
 
             </div>
