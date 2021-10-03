@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-
+    <!-- 부트스트랩 시작코드(수정) -->
     <!-- Required meta tags -->
-    <meta charset="utf-8"/>
-    <meta
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            name="viewport"
-    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link
-            crossorigin="anonymous"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
     <!-- 구글폰트 -->
     <link
@@ -221,19 +224,19 @@
 
 
 
-        function postArticle() {
+        function make_log() {
 
         // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
-        let writer = $('#post-writer').val();
-        let numbers =  $('#post-numbers').val();
-        let place =  $('#post-place').val();
-        let title =  $('#post-title').val();
-        let date =  $('#post-date').val();
-        let weather =  $('#post-weather').val();
+        let writer = $("#post-writer").val();
+        let numbers =  $("#post-numbers").val();
+        let place =  $("#post-place").val();
+        let title =  $("#post-title").val();
+        let date =  $("#post-date").val();
+        let weather =  $("#post-weather").val();
 
-        let comment =  $('#post-comment').val();
+        let comment =  $("#post-comment").val();
 
-        let file =  $('#file')[0].files[0];
+        let file =  $("#file")[0].files[0];
 
         let form_data = new FormData();
 
@@ -248,14 +251,18 @@
 
             $.ajax({
                 type: "POST",
-                url: "/makelog",
+                url: "/log",
                 data: form_data,
                 cache: false,
                 contentType: false,
                 processData: false,
                 success: function (response) {
-                        alert(response["msg"]);
+                    if (response["result"] == "success") {
+                        console.log()
+
+                        alert(response['msg']);
                         window.location.reload();
+                    }
                 }
 
             })
@@ -286,10 +293,11 @@
         <div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input class="form-control" id="post-writer" placeholder="작성자">
+                    <input class="form-control" id="post-writer" placeholder="ID">
                 </div>
                 <div class="form-group col-md-6">
-                    <input class="form-control" id="post-numbers" placeholder="숫자">
+
+                    <input class="form-control" id="post-numbers" placeholder="비밀번호">
                 </div>
 
             </div>
@@ -313,12 +321,13 @@
 <!--                <input type='radio' name='weather' value='sunny'/>️☀️-->
 
             <div class="form-group" id="post-weather">
-                <button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">☀️</button>
-                <button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">☁️</button>
-                <button type="button" class="btn">☔</button>
-                <button type="button" class="btn">💨</button>
-                <button type="button" class="btn">⚡</button>
-                <button type="button" class="btn">☃️️</button>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☀️</label>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☁️</label>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☂️️</label>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">💨️</label>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">⚡️️</label>
+                <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">⛄️️</label>
+
             </div>
 
 
@@ -334,7 +343,7 @@
                 <textarea class="form-control" id="post-comment" rows="2"></textarea>
             </div>
 
-            <button class="btn btn-primary" onclick="postArticle()" type="button">일기 저장</button>
+            <button class="btn btn-primary" onclick="make_log()" type="button">일기 저장</button>
         </div>
     </div>
     <div class="card-columns" id="cards-box">

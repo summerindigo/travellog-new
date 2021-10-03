@@ -3,8 +3,7 @@ from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
-# client = MongoClient('mongodb://test:test@localhost', 27017) 이건 일부러 비활성화 시킴
+client = MongoClient('localhost', 27017) # client = MongoClient('mongodb://test:test@localhost', 27017) 이건 일부러 비활성화 시킴
 db = client.travellog_project
 
 from datetime import datetime   ## file 저장 명칭을 위해 필요
@@ -20,8 +19,8 @@ def record():
 
 
 ## 포스트 작성 페이지 write.html
-@app.route('/makelog', methods=['POST'])
-def post():            ## 일기 저장 버튼 누르면
+@app.route('/log', methods=['POST'])
+def write_log():            ## 일기 저장 버튼 누르면
     id_writer_receive = request.form['writer_give']
     id_numbers_receive = request.form['numbers_give']
     place_receive = request.form['place_give']
@@ -30,6 +29,7 @@ def post():            ## 일기 저장 버튼 누르면
     weather_receive = request.form['weather_give']
     # file - 아래에 작성
     comment_receive = request.form['comment_give']
+    print(request.data)
 
     file = request.files['file_give']
     extension = file.filename.split('.')[-1]  ## 확장자 이름 jpg png pdf 등
@@ -55,7 +55,7 @@ def post():            ## 일기 저장 버튼 누르면
     }
 
     db.travelLog.insert_one(doc)
-    return jsonify({'msg': '정상적으로 등록됐습니다!'})
+    return jsonify({'result': 'success', 'msg': '이 요청은 POST!'})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
