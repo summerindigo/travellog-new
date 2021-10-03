@@ -41,7 +41,7 @@
     ></script>
 
     <!--파일업로드 코드-->
-    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>-->
 
     <title>우리의 여행</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,7 +219,7 @@
     <script>
         $(document).ready(function () {
             // 이것은 파일업로드 할때 파일명을 보이게 해주는 코드
-            bsCustomFileInput.init()
+            // bsCustomFileInput.init()
         })
 
 
@@ -236,7 +236,7 @@
 
         let comment =  $("#post-comment").val();
 
-        let file =  $("#file")[0].files[0];
+        // let file =  $("#file")[0].files[0];
 
         let form_data = new FormData();
 
@@ -246,7 +246,7 @@
         form_data.append("title_give", title)
         form_data.append("date_give", date)
         form_data.append("weather_give", weather)
-        form_data.append("file_give", file)
+        // form_data.append("file_give", file)
         form_data.append("comment_give", comment)
 
             $.ajax({
@@ -258,7 +258,6 @@
                 processData: false,
                 success: function (response) {
                     if (response["result"] == "success") {
-                        console.log()
 
                         alert(response['msg']);
                         window.location.reload();
@@ -332,10 +331,10 @@
 
 
             <!--사진첨부-->
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="file">
-                <label class="custom-file-label" for="file">사진 선택</label>
-            </div>
+<!--            <div class="custom-file">-->
+<!--                <input type="file" class="custom-file-input" id="file">-->
+<!--                <label class="custom-file-label" for="file">사진 선택</label>-->
+<!--            </div>-->
 
             <!--내용작성-->
             <div class="form-group-comment">
