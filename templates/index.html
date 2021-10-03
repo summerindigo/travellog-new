@@ -40,6 +40,42 @@
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     ></script>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            showLog();
+        });
+
+        function ShowLog() {
+            $.ajax({
+                    type: "GET",
+                    url: "/log",
+                    data: {},
+                    success: function (response) {
+                        let logs = response['all_reviews']
+                        for (let i = 0; i < logs.length; i++) {
+                            let title = logs[i]['title']
+                            let place = logs[i]['place']
+                            let comment = logs[i]['comment']
+                            let date = logs[i]['date']
+
+                            let temp_html = `<div class="card">
+                                                <img class="card-img-top"
+                                                     src="${image}"
+                                                     alt="Card image cap">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${image} <span style="font-size: small">여행지</span></h5>
+                                                    <p class="card-text">${comment}</p>
+                                                    <p class="card-text"><small class="text-muted">${date}</small></p>
+                                                </div>
+                                            </div>`
+                            $('#cards-box').append(temp_html)
+                        }
+                    }
+                })
+            }
+        </script>
+
     <!--파일업로드 코드-->
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 
@@ -266,10 +302,10 @@
         </a>
     </div>
 
-    <div class="card-deck">
+    <div id="cards-box" class="card-deck">
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
@@ -279,7 +315,7 @@
         </div>
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
@@ -289,7 +325,7 @@
         </div>
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
@@ -301,7 +337,7 @@
     <div class="card-deck">
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
@@ -311,7 +347,7 @@
         </div>
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>
@@ -321,7 +357,7 @@
         </div>
         <div class="card">
             <img class="card-img-top"
-                 src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
+                 src="https://lh3.googleusercontent.com/proxy/TZ6oaYPo0sh_goG8wT_I9t17Ak6Y9M-WJBOH9gLc8_ei2WuCJK8yYuPgiIP7Uh1t3v7LaZlE5eKZykiN5dWCLyMxCCLEauUJny2GUICdmu9Qg3k8DklERQ"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">일기 제목입니다. <span style="font-size: small">여행지</span></h5>

@@ -9,6 +9,11 @@ app = Flask(__name__)
 def travle():          ## 우리의 여행일기 - travle
     return render_template('index.html')
 
+@app.route('/', methods=['GET'])
+def listing():
+    logs = list(db.reviews.find({}, {'_id : False'}))
+    return jsonify({'all_reviews':logs})
+
 @app.route('/menu1')   ## 일기쓰기 페이지 - menu1
 def record():          ## 일기쓰기 - record
     return render_template('write.html')
