@@ -22,6 +22,9 @@ def write():           ## 일기쓰기 : write
 def mylog():           ## 내일기 모아보기 : mylog
     return render_template('mylog.html')
 
+@app.route('/about')   ## 웹사이트 크레딧 주소 : mylog
+def about():           ## 웹사이트 크레딧 : mylog
+    return render_template('about.html')
 
 ## 포스트 작성 페이지 write.html
 @app.route('/write', methods=['POST'])
