@@ -53,6 +53,7 @@
             background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
             background-size: cover;
             background-position: center;
+            text-decoration: none;
         }
 
         .sitetitle {
@@ -64,6 +65,7 @@
             font-weight: bold;
             color: #ffffff;
             text-shadow: 2px 2px 0px #333333;
+            text-decoration: none;
         }
 
 
@@ -133,7 +135,7 @@
             .sitetop {
                 width: 100%;
                 height: 160px;
-                background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+                background-image: url("../static/introduction.jpeg");
                 background-size: cover;
                 background-position: center;
                 margin-top: 0;
@@ -147,6 +149,7 @@
                 font-weight: bold;
                 color: #ffffff;
                 text-shadow: 2px 2px 0px #333333;
+                text-decoration: none;
             }
 
             /* Add a black background color to the top navigation */
@@ -262,6 +265,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <header class="wrap">
     <div class="sitetop">
         <h1 class="sitetitle">우리의 여행</h1>
@@ -273,6 +277,37 @@
         <a href="/about">about</a>
     </div>
 </header>
+=======
+    <header class="wrap">
+        <div class="sitetop">
+            <a href="/"><h1 class="sitetitle">우리의 여행</h1></a>
+        </div>
+        <div class="topnav">
+            <a href="/">우리의 여행일기</a>
+            <a class="active" href="/write">일기 쓰기</a>
+            <a href="/mylog">내 일기 모아보기</a>
+            <a href="#about">about</a>
+        </div>
+    </header>
+
+    <div class="wrap">
+
+        <!--본문 부분: 기록 작성-->
+        <div class="form-post" id="post-box">
+            <div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input class="form-control" id="post-writer" placeholder="ID">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" id="post-numbers" placeholder="비밀번호" type="password" minlegth="8">
+                        <!-- type="password" minlegth="8" -->
+                    <!-- 누르면 비밀번호 보이는 체크박스 -->
+                    <input type="checkbox" onclick="myFunction()">
+                    <span style="font-size: 12px; color: grey;">비밀번호 보기</span>
+                    </div>
+                </div>
+>>>>>>> 9ef80093d7d17528ffb14ea2142d798e17d088bc
 
 <div class="wrap">
 
@@ -314,6 +349,24 @@
                 </select>
             </div>
 
+<<<<<<< HEAD
+=======
+            <!--사진첨부-->
+<!--            <div class="custom-file">-->
+<!--                <input type="file" class="custom-file-input" id="file">-->
+<!--                <label class="custom-file-label" for="file">사진 선택</label>-->
+<!--            </div>-->
+
+                <!--내용작성-->
+                <div class="form-group-comment">
+                    <label for="post-comment">일기 내용</label>
+                    <textarea class="form-control" id="post-comment" rows="2"></textarea>
+                        <div class="count-comment-length" id="count">
+                        <span id="current_count">0</span>
+                        <span id="maximum_count">/ 140</span>
+                        </div>
+                </div>
+>>>>>>> 9ef80093d7d17528ffb14ea2142d798e17d088bc
 
             <!--<form action='a.jsp'>-->
             <!--날씨<br>-->
@@ -356,3 +409,23 @@
 </footer>
 </body>
 </html>
+<script type="text/javascript">
+    // 비밀번호 보기 기능
+    function myFunction() {
+                var x = document.getElementById("post-numbers");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+    }
+
+    // comment 글자수 세기 - 위치가 여기에 있어나 기능이 됨
+    $('textarea').keyup(function() {
+        var characterCount = $(this).val().length,
+            current_count = $('#current_count'),
+            maximum_count = $('#maximum_count'),
+            count = $('#count');
+            current_count.text(characterCount);
+    });
+</script>
