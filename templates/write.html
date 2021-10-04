@@ -53,6 +53,7 @@
             background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
             background-size: cover;
             background-position: center;
+            text-decoration: none;
         }
 
         .sitetitle {
@@ -64,6 +65,7 @@
             font-weight: bold;
             color: #ffffff;
             text-shadow: 2px 2px 0px #333333;
+            text-decoration: none;
         }
 
 
@@ -133,7 +135,7 @@
             .sitetop {
                 width: 100%;
                 height: 160px;
-                background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
+                background-image: url("../static/introduction.jpeg");
                 background-size: cover;
                 background-position: center;
                 margin-top: 0;
@@ -147,6 +149,7 @@
                 font-weight: bold;
                 color: #ffffff;
                 text-shadow: 2px 2px 0px #333333;
+                text-decoration: none;
             }
 
             /* Add a black background color to the top navigation */
@@ -262,6 +265,7 @@
 </head>
 
 <body>
+  
 <header class="wrap">
     <div class="sitetop">
         <h1 class="sitetitle">우리의 여행</h1>
@@ -273,6 +277,8 @@
         <a href="/about">about</a>
     </div>
 </header>
+
+  
 
 <div class="wrap">
 
@@ -315,6 +321,22 @@
             </div>
 
 
+            <!--사진첨부-->
+<!--            <div class="custom-file">-->
+<!--                <input type="file" class="custom-file-input" id="file">-->
+<!--                <label class="custom-file-label" for="file">사진 선택</label>-->
+<!--            </div>-->
+
+                <!--내용작성-->
+                <div class="form-group-comment">
+                    <label for="post-comment">일기 내용</label>
+                    <textarea class="form-control" id="post-comment" rows="2"></textarea>
+                        <div class="count-comment-length" id="count">
+                        <span id="current_count">0</span>
+                        <span id="maximum_count">/ 140</span>
+                        </div>
+                </div>
+
             <!--<form action='a.jsp'>-->
             <!--날씨<br>-->
             <!--<input type='radio' name='weather' value='sunny'/>☀-->
@@ -356,3 +378,23 @@
 </footer>
 </body>
 </html>
+<script type="text/javascript">
+    // 비밀번호 보기 기능
+    function myFunction() {
+                var x = document.getElementById("post-numbers");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+    }
+
+    // comment 글자수 세기 - 위치가 여기에 있어나 기능이 됨
+    $('textarea').keyup(function() {
+        var characterCount = $(this).val().length,
+            current_count = $('#current_count'),
+            maximum_count = $('#maximum_count'),
+            count = $('#count');
+            current_count.text(characterCount);
+    });
+</script>
