@@ -42,21 +42,25 @@
                         let place = logs[i]['place']
                         let comment = logs[i]['comment']
                         let writer = logs[i]['writer']
+                        let weather = logs[i]['weather']
                         let date = logs[i]['date']
 
                         let temp_html = `<div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title">
-                                                    <span style="font-size: small">여행지: ${place}</span>
-                                                </h5>
-                                                <p class="card-text"> <h5>${title}</h5></p>
+                                                <p class="card-title" style="font-size: small; text-align:left;">
+                                                    여행지: ${place}
+                                                    <span style="float:right;">${weather}</span>
+                                                </p>
+                                                <p class="card-text"><h5>${title}</h5></p>
                                                 <p class="card-text">${comment}</p>
-                                                <p class="card-text"><small class="text-muted">${date}</small></p>
-                                                <p class="card-text"><span style="font-size: small">by. ${writer}</span></p>
+                                                <div class="card-bottom" style="font-size: small; text-align:left;">
+                                                    by. ${writer}
+                                                    <span class="text-muted" style="float:right;">${date}</span>
+                                                </div>
                                             </div>
                                         </div>`
                         // 3. append 할 대상이 잘못 적혀있던 오류 수정
-                        $('#card-deck').append(temp_html)
+                        $('#card-box').append(temp_html)
                     }
                 }
             })
@@ -151,8 +155,7 @@
 
 
         /* bootstrap css문제 해결을 위해 class에서 id로 변경 */
-        #card-deck {
-            display: flex;
+        #card-box {
             flex-flow: wrap;
             justify-content: space-between;
             width: 900px;
@@ -161,8 +164,14 @@
         }
 
         .card {
-            padding: 10rem, 10rem, 10rem, 10rem;
-            width: 250px;
+            padding: 10rem, 10rem, 0, 10rem;
+            margin-bottom: 10px;
+            width: 280px;
+        }
+
+        .card-bottom {
+            margin-top: auto;
+            margin-bottom: 5px;
         }
 
 
@@ -310,7 +319,7 @@
 
         <!-- 4. bootstrap css 문제 해결을 위해 class에서 id로 변경 -->
 
-        <div id="card-deck">
+        <div id="card-box" class="card-columns">
             <!-- <div class="card">-->
                 <!-- <img class="card-img-top"-->
                 <!-- src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"-->
