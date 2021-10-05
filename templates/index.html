@@ -13,6 +13,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!-- 1. 제이쿼리 버전 변경 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -20,6 +22,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        showLog();
+    });
+
+    function showLog() {
+        $.ajax({
+            // 2. url 수정
+                type: "POST",
+                url: "/",
+                data: {},
+                success: function (response) {
+                    let logs = response['travel_logs']
+                    for (let i = 0; i < logs.length; i++) {
+                        let title = logs[i]['title']
+                        let place = logs[i]['place']
+                        let comment = logs[i]['comment']
+                        let date = logs[i]['date']
+
+                        let temp_html = `<div class="card">
+                                            <img class="card-img-top"
+                                                 src="#"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><span style="font-size: small">여행지</span></h5>
+                                                <p class="card-text">${comment}</p>
+                                                <p class="card-text"><small class="text-muted">${date}</small></p>
+                                            </div>
+                                        </div>`
+                    // 3. append 할 대상이 잘못 적혀있던 오류 수정
+                        $('#card-deck').append(temp_html)
+                    }
+                }
+            })
+        }
+    </script>
 
     <!-- 구글폰트 -->
     <link
@@ -107,10 +147,20 @@
             color: white;
         }
 
-        .card-deck {
+
+        /* bootstrap css문제 해결을 위해 class에서 id로 변경 */
+        #card-deck {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
             width: 900px;
             margin: auto;
             padding-top: 20px;
+        }
+
+        .card {
+            padding: 10rem, 10rem, 10rem, 10rem;
+            width: 250px;
         }
 
             @media screen and (max-width: 900px) {
@@ -169,7 +219,7 @@
                 }
 
                 /* index.html만의 부분 s */
-                .card-deck {
+                #card-deck {
                     width: 100%;
                     padding-bottom: 5px;
 
@@ -211,9 +261,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
@@ -252,7 +302,8 @@
             </a>
         </div>
 
-        <div class="card-deck">
+        <!-- 4. bootstrap css 문제 해결을 위해 class에서 id로 변경 -->
+        <div id="card-deck">
             <div class="card">
                 <img class="card-img-top"
                      src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
@@ -284,7 +335,6 @@
                 </div>
             </div>
         </div>
-        <div class="card-deck">
             <div class="card">
                 <img class="card-img-top"
                      src="https://lh3.googleusercontent.com/proxy/WNDmMDm4o6CuKMc0_AIeH99MYJX2gFtfOIlTVH0KeKyFGSlQKsxQkS_djhcaunyyRzdywtD_fjIQbUy3C2Oa89A8OkF4lb_2cYzkt9ZIfOTVjqsPx2wj_w"
@@ -315,7 +365,7 @@
                     <p class="card-text"><small class="text-muted">작성 날짜입니다.</small></p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <footer class="wrap">

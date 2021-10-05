@@ -14,6 +14,13 @@ from datetime import datetime   ## file 저장 명칭을 위해 필요
 def home():            ## 우리의 여행일기 : home
     return render_template('index.html')
 
+@app.route('/', methods=['POST'])
+def show_logs():
+    # 5. route 주소 변경
+    travel_log = list(db.travelLog.find({}, {'_id': False}))
+    ##return render_template('index.html')
+    return jsonify({'travel_logs' : travel_log})
+
 @app.route('/write')   ## 일기쓰기 주소 : write
 def write():           ## 일기쓰기 : write
     return render_template('write.html')
