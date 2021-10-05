@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, request
-
 app = Flask(__name__)
 
 from pymongo import MongoClient
@@ -13,13 +12,6 @@ from datetime import datetime   ## file 저장 명칭을 위해 필요
 @app.route('/')        ## 우리의 여행일기 주소 : /
 def home():            ## 우리의 여행일기 : home
     return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def show_logs():
-    # 5. route 주소 변경
-    travel_log = list(db.travelLog.find({}, {'_id': False}))
-    ##return render_template('index.html')
-    return jsonify({'travel_logs' : travel_log})
 
 @app.route('/write')   ## 일기쓰기 주소 : write
 def write():           ## 일기쓰기 : write
@@ -72,6 +64,12 @@ def write_log():            ## 일기 저장 버튼 누르면
     db.travelLog.insert_one(doc)
     return jsonify({'result': 'success', 'msg': '이 요청은 POST!'})
 
+## 포스트 보여주기 페이지 index.html
+@app.route('/', methods=['POST'])
+def show_logs():
+    # 5. route 주소 변경
+    travel_log = list(db.travelLog.find({}, {'_id': False}))
+    return jsonify({'travel_logs' : travel_log})
 
 
 if __name__ == '__main__':
