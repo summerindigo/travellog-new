@@ -53,8 +53,10 @@
             background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
             background-size: cover;
             background-position: center;
-            text-decoration: none;
+
         }
+
+        .sitetop > a {text-decoration: none;}
 
         .sitetitle {
 
@@ -65,7 +67,6 @@
             font-weight: bold;
             color: #ffffff;
             text-shadow: 2px 2px 0px #333333;
-            text-decoration: none;
         }
 
 
@@ -149,7 +150,6 @@
                 font-weight: bold;
                 color: #ffffff;
                 text-shadow: 2px 2px 0px #333333;
-                text-decoration: none;
             }
 
             /* Add a black background color to the top navigation */
@@ -216,7 +216,6 @@
             // 이것은 파일업로드 할때 파일명을 보이게 해주는 코드
             // bsCustomFileInput.init()
         })
-
 
         function make_log() {
 
@@ -285,12 +284,11 @@
             <div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input class="form-control" id="post-writer" placeholder="ID">
+                        <input class="form-control" id="post-writer" placeholder="ID" maxlength="16">
                     </div>
                     <div class="form-group col-md-6">
-                        <input class="form-control" id="post-numbers" placeholder="비밀번호" type="password" minlegth="8">
-                        <!-- type="password" minlegth="8" -->
-                    <!-- 누르면 비밀번호 보이는 체크박스 -->
+                        <input class="form-control" id="post-numbers" placeholder="비밀번호" type="password" pattern="[0-9]*" minlength="4" maxlength="16">
+                        <!-- 누르면 비밀번호 보이는 체크박스 -->
                     <input type="checkbox" onclick="myFunction()">
                     <span style="font-size: 12px; color: grey;">비밀번호 보기</span>
                     </div>
@@ -322,13 +320,6 @@
                     <option>눈</option>
                 </select>
             </div>
-
-
-            <!--사진첨부-->
-<!--            <div class="custom-file">-->
-<!--                <input type="file" class="custom-file-input" id="file">-->
-<!--                <label class="custom-file-label" for="file">사진 선택</label>-->
-<!--            </div>-->
 
                 <!--내용작성-->
                 <div class="form-group-comment">

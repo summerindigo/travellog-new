@@ -41,16 +41,18 @@
                         let title = logs[i]['title']
                         let place = logs[i]['place']
                         let comment = logs[i]['comment']
+                        let writer = logs[i]['writer']
                         let date = logs[i]['date']
 
                         let temp_html = `<div class="card">
-                                            <!-- <img class="card-img-top"-->
-                                            <!-- src="#"-->
-                                            <!-- alt="Card image cap">-->
                                             <div class="card-body">
-                                                <h5 class="card-title"><span style="font-size: small">${place}</span></h5>
+                                                <h5 class="card-title">
+                                                    <span style="font-size: small">여행지: ${place}</span>
+                                                </h5>
+                                                <p class="card-text"> <h5>${title}</h5></p>
                                                 <p class="card-text">${comment}</p>
                                                 <p class="card-text"><small class="text-muted">${date}</small></p>
+                                                <p class="card-text"><span style="font-size: small">by. ${writer}</span></p>
                                             </div>
                                         </div>`
                         // 3. append 할 대상이 잘못 적혀있던 오류 수정
@@ -88,8 +90,9 @@
             background-image: url("https://miro.medium.com/max/1400/1*T4H2-9ToU2Eg5yns8YQhIA.jpeg");
             background-size: cover;
             background-position: center;
-            text-decoration: none;
         }
+
+        .sitetop > a {text-decoration: none;}
 
         .sitetitle {
             margin: 10px;
@@ -100,7 +103,6 @@
 
             color: #ffffff;
             text-shadow: 2px 2px 0px #333333;
-            text-decoration: none;
         }
 
         /* Add a black background color to the top navigation */
@@ -163,7 +165,9 @@
             width: 250px;
         }
 
+
         @media screen and (max-width: 900px) {
+
 
             .sitetop {
                 width: 100%;
@@ -305,6 +309,7 @@
         </div>
 
         <!-- 4. bootstrap css 문제 해결을 위해 class에서 id로 변경 -->
+
         <div id="card-deck">
             <!-- <div class="card">-->
                 <!-- <img class="card-img-top"-->
@@ -317,6 +322,7 @@
                 <!-- </div>-->
             <!-- </div>-->
         </div>
+
     </div>
 
     <footer class="wrap">
