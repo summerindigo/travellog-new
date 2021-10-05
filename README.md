@@ -1,5 +1,5 @@
 # travellog-new
-<Backend>
+Backend
 현재 작업 중: 워드클라우드 생성
 
 
