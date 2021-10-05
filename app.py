@@ -17,9 +17,9 @@ def home():            ## 우리의 여행일기 : home
 def write():           ## 일기쓰기 : write
     return render_template('write.html')
 
-@app.route('/mylog')   ## 내일기 모아보기 주소 : mylog
+@app.route('/cloud')   ## 내일기 모아보기 주소 : mylog
 def mylog():           ## 내일기 모아보기 : mylog
-    return render_template('mylog.html')
+    return render_template('cloud.html')
 
 @app.route('/about')   ## 웹사이트 크레딧 주소 : mylog
 def about():           ## 웹사이트 크레딧 : mylog
