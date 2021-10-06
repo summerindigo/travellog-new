@@ -315,29 +315,30 @@
 
 
                 <div class="form-group">
-                    <input class="form-control" id="post-place" placeholder="여행지" required>
+                    <input class="form-control" id="post-place" name="place" placeholder="여행지">
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control" id="post-title" placeholder="일기 제목">
+                    <input class="form-control" id="post-title" name="title" placeholder="일기 제목">
                 </div>
+                <div class="form-row">
+                    <!--날짜-->
+                    <div class="form-group col-md-6">
+                        <input type="date" class="form-control" id="post-date" name="date"
+                               placeholder="날짜 선택">
+                    </div>
 
-                <!--날짜-->
-                <div class="form-group">
-                    <input type="date" class="form-control" id="post-date" name="trip-start"
-                           placeholder="날짜 선택">
-                </div>
-
-                <!--날씨-->
-                <div class="form-group">
-                    <select class="form-control" id="post-weather">
-                        <option>날씨</option>
-                        <option>☀️ 맑음</option>
-                        <option>☁️ 흐림</option>
-                        <option>☂️ 비</option>
-                        <option>💨️ 바람</option>
-                        <option>⛄  눈</option>
-                    </select>
+                    <!--날씨-->
+                    <div class="form-group col-md-6">
+                        <select class="form-control" id="post-weather" name="weather">
+                            <option>날씨</option>
+                            <option>☀️ 맑음</option>
+                            <option>☁️ 흐림</option>
+                            <option>☂️ 비</option>
+                            <option>💨️ 바람</option>
+                            <option>⛄  눈</option>
+                        </select>
+                    </div>
                 </div>
             </div>
                 <!--내용작성-->
