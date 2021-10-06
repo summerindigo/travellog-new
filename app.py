@@ -62,7 +62,7 @@ def write_log():            ## 일기 저장 버튼 누르면
     }
 
     db.travelLog.insert_one(doc)
-    return jsonify({'result': 'success', 'msg': '이 요청은 POST!'})
+    return jsonify({'result': 'success', 'msg': '오늘 일기 끝~!'})
 
 ## 포스트 보여주기 페이지 index.html
 @app.route('/', methods=['POST'])
