@@ -17,12 +17,13 @@ def home():            ## 우리의 여행일기 : home
 def write():           ## 일기쓰기 : write
     return render_template('write.html')
 
-@app.route('/cloud')   ## 내일기 모아보기 주소 : mylog
-def mylog():           ## 내일기 모아보기 : mylog
+# 내 일기 모아보기 변경-> 클라우드
+@app.route('/cloud')   ## 클라우드보기 주소 : cloud
+def cloud():           ## 클라우드 : cloud
     return render_template('cloud.html')
 
-@app.route('/about')   ## 웹사이트 크레딧 주소 : mylog
-def about():           ## 웹사이트 크레딧 : mylog
+@app.route('/about')   ## 웹사이트 크레딧 주소 : about
+def about():           ## 웹사이트 크레딧 : about
     return render_template('about.html')
 
 ## 포스트 작성 페이지 write.html
