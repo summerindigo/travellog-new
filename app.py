@@ -76,6 +76,12 @@ def show_logs():
     travel_log = list(db.travelLog.find({}, {'_id': False}))
     return jsonify({'travel_logs' : travel_log})
 
+# 워드클라우드 보여주기 cloud.html
+@app.route('/cloud')
+def show_cloud():
+    word_cloud = wc.to_file("wordcloud.png")
+    return jsonify({'word_clouds': word_cloud})
+
 # 워드클라우드 만들기
 # 1. 몽고디비에서 place, title, comment 가져오기
 texts = list(db.travelLog.find({}, {'_id': False, 'writer': False, 'numbers': False, 'date': False, 'weather': False}))
