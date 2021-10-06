@@ -131,6 +131,11 @@
             color: white;
         }
 
+        #post-numbers:focus {
+             background: yellow;
+  color: red;
+        }
+
         /* !!여기는 모바일 버전 css !! */
         @media screen and (max-width: 900px) {
             .sitetop {
@@ -205,59 +210,70 @@
                 text-align: center;
                 color: white;
             }
-        }
+        }  /* !!여기는 모바일 버전 css 끝!! */
 
 
     </style>
 
     <script>
-        $(document).ready(function () {
-            // 이것은 파일업로드 할때 파일명을 보이게 해주는 코드
-            // bsCustomFileInput.init()
-        })
+        // $(document).ready(function () {
+        //     // 이것은 파일업로드 할때 파일명을 보이게 해주는 코드
+        //     // bsCustomFileInput.init()
+        // })
 
         function make_log() {
+            var postForm = document.postForm;
+            var pilsu_writer = postForm.writer.value; //writer는 name으로 설정한 것
+            var pilsu_numbers = postForm.numbers.value;
+            var pilsu_place = postForm.place.value;
+            var pilsu_title = postForm.title.value;
+            var pilsu_date = postForm.date.value;
+            var pilsu_weather = postForm.weather.value;
+            var pilsu_comment = postForm.comment.value;
 
-            // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
-            let writer = $("#post-writer").val();
-            let numbers = $("#post-numbers").val();
-            let place = $("#post-place").val();
-            let title = $("#post-title").val();
-            let date = $("#post-date").val();
-            let weather = $("#post-weather").val();
+            if (!pilsu_writer || !pilsu_numbers || !pilsu_place || !pilsu_title || !pilsu_date || !pilsu_weather || !pilsu_comment ) {
+                alert("빈칸을 모두 입력해주세요.")
+            } else {
+                postForm.submit();
 
-            let comment = $("#post-comment").val();
+                    // 본문 기록 작성에서 id 값으로 지정한 것이 #뒤에 적힌 것
+                let writer = $("#post-writer").val();
+                let numbers = $("#post-numbers").val();
+                let place = $("#post-place").val();
+                let title = $("#post-title").val();
+                let date = $("#post-date").val();
+                let weather = $("#post-weather").val();
+                let comment = $("#post-comment").val();
+                // let file =  $("#file")[0].files[0];
+                let form_data = new FormData();
 
-            // let file =  $("#file")[0].files[0];
+                form_data.append("writer_give", writer)
+                form_data.append("numbers_give", numbers)
+                form_data.append("place_give", place)
+                form_data.append("title_give", title)
+                form_data.append("date_give", date)
+                form_data.append("weather_give", weather)
+                // form_data.append("file_give", file)
+                form_data.append("comment_give", comment)
 
-            let form_data = new FormData();
+                $.ajax({
+                    type: "POST",
+                    url: "/write",
+                    data: form_data,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response["result"] == "success") {
 
-            form_data.append("writer_give", writer)
-            form_data.append("numbers_give", numbers)
-            form_data.append("place_give", place)
-            form_data.append("title_give", title)
-            form_data.append("date_give", date)
-            form_data.append("weather_give", weather)
-            // form_data.append("file_give", file)
-            form_data.append("comment_give", comment)
-
-            $.ajax({
-                type: "POST",
-                url: "/write",
-                data: form_data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    if (response["result"] == "success") {
-
-                        alert(response['msg']);
-                        window.location.reload();
+                            alert(response['msg']);
+                            window.location.reload();
+                        }
                     }
-                }
-            })
-
+                })
+            }
         }
+
     </script>
 
 </head>
@@ -279,14 +295,14 @@
     <div class="wrap">
 
         <!--본문 부분: 기록 작성-->
-        <form class="form-post" id="post-box">
+        <form class="form-post" id="post-box" name="postForm">
             <div>
                 <div class="form-row">
-                    <form class="form-group col-md-6" novalidate>
-                        <input class="form-control" id="post-writer" placeholder="ID" maxlength="16" required/>
-                    </form>
                     <div class="form-group col-md-6">
-                        <input class="form-control" id="post-numbers" placeholder="비밀번호" type="password" minlength="4" maxlength="16"/>
+                        <input class="form-control" id="post-writer" name="writer" placeholder="ID" maxlength="16">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" id="post-numbers" name="numbers" placeholder="비밀번호" type="password" minlength="8" maxlength="20"/>
                         <!-- 누르면 비밀번호 보이는 체크박스 -->
                     <input type="checkbox" onclick="myFunction()">
                     <span style="font-size: 12px; color: grey;">비밀번호 보기</span>
@@ -295,35 +311,35 @@
 
 
             <div class="form-group">
-                <input class="form-control" id="post-place" placeholder="여행지" required>
+                <input class="form-control" id="post-place" name="place" placeholder="여행지">
             </div>
 
             <div class="form-group">
-                <input class="form-control" id="post-title" placeholder="일기 제목">
+                <input class="form-control" id="post-title" name="title" placeholder="일기 제목">
             </div>
 
-            <!--날짜-->
-            <div class="form-group">
-                <input type="date" class="form-control" id="post-date" name="trip-start"
-                       placeholder="날짜 선택">
-            </div>
+            <div class="form-row">
+                <!--날짜-->
+                <div class="form-group col-md-6">
+                    <input type="date" class="form-control" id="post-date" name="date" placeholder="날짜 선택">
+                </div>
 
-            <!--날씨-->
-            <div class="form-group">
-                <select class="form-control" id="post-weather">
-                    <option>날씨</option>
-                    <option>☀️ 맑음</option>
-                    <option>☁️ 흐림</option>
-                    <option>☂️ 비</option>
-                    <option>💨️ 바람</option>
-                    <option>⛄  눈</option>
-                </select>
+                <!--날씨-->
+                <div class="form-group col-md-6">
+                    <select class="form-control" id="post-weather" name="weather">
+                        <option selected>날씨</option>
+                        <option>☀️ 맑음</option>
+                        <option>☁️ 흐림</option>
+                        <option>☂️ 비</option>
+                        <option>💨️ 바람</option>
+                        <option>⛄  눈</option>
+                    </select>
+                </div>
             </div>
-
                 <!--내용작성-->
                 <div class="form-group-comment">
                     <label for="post-comment">일기 내용</label>
-                    <textarea class="form-control" id="post-comment" rows="2"></textarea>
+                    <textarea class="form-control" id="post-comment" name="comment" rows="2"></textarea>
                         <div class="count-comment-length" id="count">
                         <span id="current_count">0</span>
                         <span id="maximum_count">/ 140</span>
