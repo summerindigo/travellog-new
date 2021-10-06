@@ -49,8 +49,8 @@
                 success: function (response) {
                     let make_cloud = response['word_clouds']
 
-                    let temp_html = `<div>
-                                        <img class="card-img" src="${make_cloud}" alt="image">
+                    let temp_html = `<div class="card-img">
+                                        <img id="cloud-img" src="${make_cloud}" alt="img">
                                     </div>`
                     $('#cloud_img').append(temp_html)
                 }
@@ -232,6 +232,12 @@
         }
         /* !!여기는 모바일 버전 css 끝!! */
     </style>
+    <script>
+         $(document).ready(function () {
+            showLog();
+        });
+    </script>
+
 </head>
 
 <body>
@@ -247,8 +253,10 @@
         </div>
     </header>
 
-    <div>
-        <img id="cloud_img" class="card-img" src="..." alt="img">
+    <div class="wrap">
+        <div class="card-img">
+            <img id="cloud-img" src="..." alt="img">
+        </div>
     </div>
 
     <footer class="wrap">
