@@ -76,7 +76,7 @@ def show_logs():
     travel_log = list(db.travelLog.find({}, {'_id': False}))
     return jsonify({'travel_logs' : travel_log})
 
-# 클라우드 보여주기 cloud.html
+# 워드클라우드 보여주기 cloud.html
 @app.route('/cloud')
 def show_cloud():
     word_cloud = wc.to_file("wordcloud.png")
