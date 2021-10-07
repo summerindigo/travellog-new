@@ -7,8 +7,8 @@ client = MongoClient('mongodb://test:test@15.164.50.230:27017')
 db = client.travellog_project
 
 from wordcloud import WordCloud
-# from PIL import Image
-# import numpy as np
+from PIL import Image
+import numpy as np
 
 from datetime import datetime   # file 저장 명칭을 위해 필요
 
@@ -92,11 +92,19 @@ for text in texts:
 
     def cloud():
         return place + title + comment
-    print(cloud())
+    # print(cloud())
 
 # 2. 워드클라우드 만들기
-# mask = np.array(Image.open('cloud.png'))   # 클라우드 모양 지정하기
-wc = WordCloud(font_path='C:/Windows/Fonts/H2GTRE.TTF', background_color="white", width=600, height=400)
+# 클라우드 모양 지정하기
+mask = np.array(Image.open('cloud.png'))
+# 워드클라우드 테마 바꾸기
+palettes = ['Pastel1', 'Pastel2', 'Set1', 'Set2', 'Set3', 'Paired', 'Accent', 'Dark2']
+
+wc = WordCloud(font_path='C:/Windows/Fonts/HMKMRHD.ttf',
+               background_color='white',
+               mask=mask,
+               colormap='Dark2')
+
 wc.generate(cloud())
 wc.to_file("wordcloud.png")
 
