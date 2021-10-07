@@ -102,9 +102,9 @@ palettes = ['Pastel1', 'Pastel2', 'Set1', 'Set2', 'Set3', 'Paired', 'Accent', 'D
 
 wc = WordCloud(background_color='white',
                # 윈도우 폰트
-               # font_path='C:/Windows/Fonts/HMKMRHD.ttf',
+               font_path='C:/Windows/Fonts/HMKMRHD.ttf',
                # 맥 폰트
-               font_path='C:/System/Library/Fonts/Supplemental/AppleGothic.ttf',
+               # font_path='C:/System/Library/Fonts/Supplemental/AppleGothic.ttf',
                mask=mask,
                colormap='Dark2')
 
