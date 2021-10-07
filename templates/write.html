@@ -91,7 +91,7 @@
 
             if (!pilsu_writer || !pilsu_numbers || !pilsu_place || !pilsu_title || !pilsu_date || !pilsu_weather || !pilsu_comment ) {
                 alert("빈칸을 모두 입력해주세요.")
-                return
+
             } else {
                 postForm.submit();
 
@@ -199,7 +199,7 @@
                 <!--내용작성-->
                 <div class="form-group-comment">
                     <label for="post-comment">일기 내용</label>
-                    <textarea class="form-control" id="post-comment" rows="2"></textarea>
+                    <textarea class="form-control" id="post-comment" name="comment" rows="2"></textarea>
                     <div class="count-comment-length" id="count">
                         <span id="current_count">0</span>
                         <span id="maximum_count">/ 140</span>
