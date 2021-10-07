@@ -46,10 +46,11 @@
         /* 포스팅 관련 css 시작 */
         .form-post {
             width: 500px;
-            margin: 20px auto;
+            margin: auto;
             padding: 50px;
             border: black solid;
             border-radius: 5px;
+            background-color: white;
         }
 
         /* 간단 코멘트 위 아래 여백 */
@@ -151,10 +152,13 @@
         </div>
     </header>
 
-    <div class="wrap">
+    <form class="wrap">
+        <br>
+        <br>
         <!--본문 부분: 기록 작성-->
-        <form class="form-post" id="post-box" name="postForm">
-            <div>
+        <div class="form-post" id="post-box" name="postForm">
+
+                <!--ID & 비번-->
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <input class="form-control" id="post-writer" name="writer" placeholder="ID" maxlength="16">
@@ -168,14 +172,17 @@
                     </div>
                 </div>
 
-
+                <!--여행지-->
                 <div class="form-group">
                     <input class="form-control" id="post-place" name="place" placeholder="여행지">
                 </div>
 
+                <!--일기 제목-->
                 <div class="form-group">
                     <input class="form-control" id="post-title" name="title" placeholder="일기 제목">
                 </div>
+
+                <!--날짜 & 날씨-->
                 <div class="form-row">
                     <!--날짜-->
                     <div class="form-group col-md-6">
@@ -195,7 +202,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+
                 <!--내용작성-->
                 <div class="form-group-comment">
                     <label for="post-comment">일기 내용</label>
@@ -206,17 +213,6 @@
                     </div>
                 </div>
 
-                <!--<form action='a.jsp'>-->
-                <!--날씨<br>-->
-                <!--<input type='radio' name='weather' value='sunny'/>☀-->
-                <!--                <div class="form-group" id="post-weather">-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☀</label>-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☁</label>-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">☂</label>-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">💨️</label>-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">⚡</label>-->
-                <!--                    <label><input type="radio" name="post-weather" value="sunny" button style="margin:8px;">⛄</label>-->
-                <!--                </div>-->
 
                 <!--사진첨부-->
                 <!--            <div class="custom-file">-->
@@ -225,10 +221,12 @@
                 <!--            </div>-->
 
                 <button class="btn btn-primary" onclick="make_log()" type="submit">일기 저장</button>
-            </div>
+
         </div>
-        <div class="card-columns" id="cards-box"></div>
-    </div>
+        <br>
+        <br>
+        <br>
+    </form>
 
     <footer class="wrap">
         <div class="footer">
