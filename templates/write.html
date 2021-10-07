@@ -189,6 +189,8 @@
 
             .wrap {
                 width: 100%;
+                min-height: 100vh;
+                padding-bottom: 50px;
             }
 
             /* write.html만의 부분 s */
@@ -231,6 +233,7 @@
 
             if (!pilsu_writer || !pilsu_numbers || !pilsu_place || !pilsu_title || !pilsu_date || !pilsu_weather || !pilsu_comment ) {
                 alert("빈칸을 모두 입력해주세요.")
+                return
             } else {
                 postForm.submit();
 
