@@ -69,8 +69,28 @@
             background-image: none !important;
         }
         #cloud-img {
+            width: 900px;
             margin : auto;
             display: block;
+        }
+        .carousel_slide {
+            width: 900px;
+            margin: auto;
+
+        }
+        @media screen and (max-width: 900px) {
+
+            #cloud-img {
+                width: 100%;
+                margin : auto;
+                display: block;
+                padding-bottom: 10px;
+                padding-top: 30px;
+            }
+            .carousel_slide {
+                width: 100%;
+
+            }
         }
     </style>
  </head>
@@ -111,7 +131,7 @@
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                     crossorigin="anonymous"></script>
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel_slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
