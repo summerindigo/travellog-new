@@ -100,8 +100,11 @@ mask = np.array(Image.open('cloud.png'))
 # 워드클라우드 테마 바꾸기
 palettes = ['Pastel1', 'Pastel2', 'Set1', 'Set2', 'Set3', 'Paired', 'Accent', 'Dark2']
 
-wc = WordCloud(font_path='C:/Windows/Fonts/HMKMRHD.ttf',
-               background_color='white',
+wc = WordCloud(background_color='white',
+               # 윈도우 폰트
+               font_path='C:/Windows/Fonts/HMKMRHD.ttf',
+               # 맥 폰트
+               # font_path='C://System/Library/Fonts/Supplemental/AppleGothic.ttf',
                mask=mask,
                colormap='Dark2')
 
