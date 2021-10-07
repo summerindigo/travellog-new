@@ -77,7 +77,7 @@ def show_logs():
     return jsonify({'travel_logs' : travel_log})
 
 # 워드클라우드 보여주기 cloud.html
-@app.route('/cloud')
+@app.route('/cloud', methods=['POST'])
 def show_cloud():
     word_cloud = wc.to_file("wordcloud.png")
     return jsonify({'word_clouds': word_cloud})
@@ -85,14 +85,14 @@ def show_cloud():
 # 워드클라우드 만들기
 # 1. 몽고디비에서 place, title, comment 가져오기
 texts = list(db.travelLog.find({}, {'_id': False, 'writer': False, 'numbers': False, 'date': False, 'weather': False}))
+text_list = []
 for text in texts:
-    place = text['place']
-    title = text['title'].replace('!','').replace('~','').replace('.','')
-    comment = text['comment'].replace('!','').replace('~','').replace('.','').replace(',','').replace('\n','')
+    text_list.append(text['place'])
+    text_list.append(text['title'].replace('!','').replace('~','').replace('.',''))
+    text_list.append(text['comment'].replace('!','').replace('~','').replace('.','').replace(',','').replace('\n',''))
 
-    def cloud():
-        return place + title + comment
-    # print(cloud())
+new_text_list = " ".join(text_list)
+print(new_text_list)
 
 # 2. 워드클라우드 만들기
 # 클라우드 모양 지정하기
@@ -108,9 +108,8 @@ wc = WordCloud(background_color='white',
                mask=mask,
                colormap='Dark2')
 
-wc.generate(cloud())
-wc.to_file("wordcloud.png")
-
+wc.generate(new_text_list)
+wc.to_file("static/wordcloud.png")
 
 
 if __name__ == '__main__':
