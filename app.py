@@ -92,7 +92,7 @@ for text in texts:
     text_list.append(text['comment'].replace('!','').replace('~','').replace('.','').replace(',','').replace('\n',''))
 
 new_text_list = " ".join(text_list)
-print(new_text_list)
+# print(new_text_list)
 
 # 2. 워드클라우드 만들기
 # 클라우드 모양 지정하기

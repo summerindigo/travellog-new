@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:title" content="우리의 여행" />
+    <meta property="og:description" content="여행 일기를 기록하고 공유해요" />
+    <meta property="og:image" content="{{ url_for('static', filename='introduction.jpeg') }}" />
+
     <!-- 부트스트랩 시작코드(수정) -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -60,6 +64,10 @@
     </script>
 
     <style>
+        .wrap {
+            background-color: white !important;
+            background-image: none !important;
+        }
         #cloud-img {
             margin : auto;
             display: block;
