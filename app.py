@@ -94,10 +94,6 @@ for text in texts:
 new_text_list = " ".join(text_list)
 print(new_text_list)
 
-# def cloud():
-#     return place + title + comment
-    # print(cloud())
-
 # 2. 워드클라우드 만들기
 # 클라우드 모양 지정하기
 mask = np.array(Image.open('cloud.png'))
@@ -111,7 +107,6 @@ wc = WordCloud(background_color='white',
                # font_path='C:/System/Library/Fonts/Supplemental/AppleGothic.ttf',
                mask=mask,
                colormap='Dark2')
-# print(cloud())
 
 wc.generate(new_text_list)
 wc.to_file("static/wordcloud.png")
